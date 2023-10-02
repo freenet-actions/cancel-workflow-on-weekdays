@@ -1,0 +1,95 @@
+name: Cancel Workflow on Weekdays
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Where to deploy'
+        required: true
+        default: 'prod'
+        type: choice
+        options:
+          - git
+          - prod
+
+      enforceWeekendDeployment:
+        description: 'Enforce weekend deployment'
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  cancel-workflow-on-weekdays:
+    if: github.event.inputs.environment == 'prod' && github.event.inputs.enforceWeekendDeployment == 'false'
+    name: Cancel on Weekdays
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Workflow on Weekdays
+        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        with:
+          blocked_days: |
+            friday
+            saturday
+            sunday
+  cancel-workflow-on-weekdays-fails:
+    if: github.event.inputs.environment == 'prod' && github.event.inputs.enforceWeekendDeployment == 'false'
+    name: Cancel on Weekdays (fails)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Workflow on Weekdays
+        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        with:
+          blocked_days: |
+            sunday
+            monday
+            tuesday
+            wednesday
+            thursday
+            friday
+            saturday
+  cancel-workflow-on-weekdays-sl:
+    if: github.event.inputs.environment == 'prod' && github.event.inputs.enforceWeekendDeployment == 'false'
+    name: Cancel on Weekdays (single-line)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Workflow on Weekdays
+        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        with:
+          blocked_days: "friday, saturday, sunday"
+  cancel-workflow-on-weekdays-sl-fails:
+    if: github.event.inputs.environment == 'prod' && github.event.inputs.enforceWeekendDeployment == 'false'
+    name: Cancel on Weekdays (single-line, fails)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Workflow on Weekdays
+        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        with:
+          blocked_days: "sunday, monday, tuesday, wednesday, thursday, friday, saturday"
+  cancel-workflow-on-weekdays-numbers:
+    if: github.event.inputs.environment == 'prod' && github.event.inputs.enforceWeekendDeployment == 'false'
+    name: Cancel on Weekdays (numbers)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Workflow on Weekdays
+        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        with:
+          blocked_days: |
+            0
+            5
+            6
+  cancel-workflow-on-weekdays-numbers-fails:
+    if: github.event.inputs.environment == 'prod' && github.event.inputs.enforceWeekendDeployment == 'false'
+    name: Cancel on Weekdays (numbers, fails)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Workflow on Weekdays
+        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        with:
+          blocked_days: |
+            0
+            1
+            2
+            3
+            4
+            5
+            6
