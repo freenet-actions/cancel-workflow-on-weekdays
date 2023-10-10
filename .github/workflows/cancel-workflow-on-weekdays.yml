@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Workflow on Weekdays
-        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        uses: freenet-actions/cancel-workflow-on-weekdays@main
         with:
           blocked_days: |
             friday
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Workflow on Weekdays
-        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        uses: freenet-actions/cancel-workflow-on-weekdays@main
         with:
           blocked_days: |
             sunday
@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Workflow on Weekdays
-        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        uses: freenet-actions/cancel-workflow-on-weekdays@main
         with:
           blocked_days: "friday, saturday, sunday"
   cancel-workflow-on-weekdays-sl-fails:
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Workflow on Weekdays
-        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        uses: freenet-actions/cancel-workflow-on-weekdays@main
         with:
           blocked_days: "sunday, monday, tuesday, wednesday, thursday, friday, saturday"
   cancel-workflow-on-weekdays-numbers:
@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Workflow on Weekdays
-        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        uses: freenet-actions/cancel-workflow-on-weekdays@main
         with:
           blocked_days: |
             0
@@ -83,7 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Workflow on Weekdays
-        uses: freenet-actions/cancel-workflow-on-weekdays@v1
+        uses: freenet-actions/cancel-workflow-on-weekdays@main
         with:
           blocked_days: |
             0

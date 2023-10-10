@@ -24,7 +24,7 @@ jobs:
         run: ${{ matrix.command }}
 
   testing-dependencies:
-    name: npm ci (Dependency Testing)
+    name: npm run build (Dependency Testing)
     if: ${{startsWith(github.event.pull_request.head.ref, 'dependabot/') || contains(github.event.pull_request.title, 'dependenc')}}
     runs-on: ubuntu-latest
     steps:
