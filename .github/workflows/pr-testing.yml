@@ -4,7 +4,7 @@ on:
 jobs:
   testing-build:
     name: ${{ matrix.command }}
-    if: ${{ !(startsWith(github.event.pull_request.head.ref, 'dependabot/') }}
+    if: ${{ !(startsWith(github.event.pull_request.head.ref, 'dependabot/')) }}
     strategy:
       # Don't cancel all jobs just because one fails.
       fail-fast: false
