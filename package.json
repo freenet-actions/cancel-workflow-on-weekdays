@@ -1,6 +1,6 @@
 {
   "name": "cancel-workflow-on-weekdays",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This action cancels the workflow if it was run on one of the specified weekdays.",
   "main": "index.js",
   "scripts": {
