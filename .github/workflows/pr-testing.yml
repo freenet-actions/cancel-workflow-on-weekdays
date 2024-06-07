@@ -1,11 +1,12 @@
 name: Testing (PR)
+
 on:
   pull_request
+
 jobs:
   testing-build:
     name: ${{ matrix.command }}
     strategy:
-      # Don't cancel all jobs just because one fails.
       fail-fast: false
       matrix:
         command: [npm run build]
@@ -16,7 +17,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
+          check-latest: true
           cache: npm
       - name: Install Dependencies
         run: npm ci
