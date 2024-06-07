@@ -2,13 +2,17 @@
 
 [![LICENSE](https://img.shields.io/github/license/freenet-actions/cancel-workflow-on-weekdays)](https://github.com/freenet-actions/cancel-workflow-on-weekdays/blob/main/LICENSE)
 
-This action blocks the current workflow if it was run on one of the specified weekdays.
+This action cancels the workflow if it was run on one of the specified weekdays.
 
 ## Inputs
 
 ### `blocked_days`
 
-A not case-sensitive list of weekdays (0-6 or English words) that workflows calling this action should be blocked on. Separated either through lines, or commas, or both. See below for more detailed info and examples.
+*Default: 'friday, saturday, sunday'*
+
+A not case-sensitive list of weekdays (0-6 or English words) that workflows calling this action should be blocked on. Separated either through lines, or commas, or both.
+
+See below for more detailed info and examples.
 
 **0 = Sunday...6 = Saturday**
 
@@ -64,19 +68,19 @@ with:
 
 ### Cancelling based on workflow variables
 
-#### Only cancelling if the `environment` is `prod`
+#### Only cancelling on specific days if the `environment` is `prod`
 
 ```yaml
-if: github.event.inputs.environment == 'prod'
+if: inputs.environment == 'prod'
 uses: freenet-actions/cancel-workflow-on-weekdays@v1
 with:
   blocked_days: 'saturday, sunday, monday'
 ```
 
-#### Only cancelling if the input `enforce` is `false`
+#### Only cancelling on specific days if the input `enforce` is `false`
 
 ```yaml
-if: github.event.inputs.enforce == 'false'
+if: inputs.enforce == false
 uses: freenet-actions/cancel-workflow-on-weekdays@v1
 with:
   blocked_days: 'saturday, sunday, monday'
