@@ -1,5 +1,5 @@
 name: 'Cancel Workflow on Weekdays'
-description: 'This action cancels the workflow if it was run on one of the specified weekdays.'
+description: 'This action cancels the workflow (or, to be exact, fails the step) if it was run on one of the specified weekdays.'
 inputs:
   blocked_days:
     description: 'A not case-sensitive list of weekdays (0-6 or English words) that workflows calling this action should be blocked on. Separated either through lines, or commas, or both. See README for more detailed info and examples.'

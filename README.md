@@ -2,7 +2,7 @@
 
 [![LICENSE](https://img.shields.io/github/license/freenet-actions/cancel-workflow-on-weekdays)](https://github.com/freenet-actions/cancel-workflow-on-weekdays/blob/main/LICENSE)
 
-This action cancels the workflow if it was run on one of the specified weekdays.
+This action cancels the workflow (or, to be exact, fails the step) if it was run on one of the specified weekdays.
 
 ## Inputs
 
