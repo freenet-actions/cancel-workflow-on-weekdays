@@ -8,7 +8,7 @@ try {
 	const blockedDays = core.getInput('blocked_days', { required: false }).replace('-', '').trim().toLowerCase();
 	
 	for(const dayLine of blockedDays.split("\n")) {
-		for(const day of dayLine.split(",")) {
+		for(let day of dayLine.split(",")) {
 			day = day.trim();
 			if((day === today.toString() || day === days[today])) { // if day is blocked
 				if(!(isNaN(day) && isNaN(parseFloat(day)))) {
