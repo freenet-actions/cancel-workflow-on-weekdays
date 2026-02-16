@@ -1,3 +1,12 @@
+# THIS ACTION WAS REPLACED BY [cancel-on-weekdays](https://github.com/freenet-actions/cancel-on-weekdays)!
+
+## OBSOLETE! This action/repository will be turned PRIVATE in future!
+
+> [!CAUTION]  
+> This action is now fully obsolete and unsupported. Please switch to the full replacement [cancel-on-weekdays](https://github.com/freenet-actions/cancel-on-weekdays).
+> 
+> In future, **this action will be turned PRIVATE!**
+
 # Cancel Workflow on Weekdays
 
 [![LICENSE](https://img.shields.io/github/license/freenet-actions/cancel-workflow-on-weekdays)](https://github.com/freenet-actions/cancel-workflow-on-weekdays/blob/main/LICENSE)
